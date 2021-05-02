@@ -7,7 +7,8 @@
     width:35vw;
     height:300px;
     margin:auto;
-    border: 1px solid #ccc;
+    border: 5px solid rgb(95, 95, 95);
+    border-radius: 5%;
     background-color: #f3f3f3;
 
     .quote-text{
@@ -43,5 +44,16 @@
         position:absolute;
         bottom: 20px;
         right: 20px;
+    }
+
+    .share-button{
+        position:absolute;
+        bottom: 20px;
+        left: 20px;
+        background-color: rgb(40, 72, 214);
+        min-height: 40px;
+        min-width: 40px;
+        width: 40px;
+        border-radius: 50%;
     }
 }

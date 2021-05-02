@@ -6,3 +6,10 @@ export const pickRandomProperty = (obj) => {
            result = prop;
     return result;
 }
+
+export const tweetUrl = (completeQuote) => {
+    var author = completeQuote.author.replaceAll(" ", "%20");
+    var text = completeQuote.text.replaceAll(" ", "%20");
+    var url = "https://twitter.com/intent/tweet?text=" + text + '%20-%20' + author;
+    return url;
+}
