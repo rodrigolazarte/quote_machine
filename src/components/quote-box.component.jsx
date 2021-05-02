@@ -4,7 +4,7 @@ import './quote-box.styles.scss';
 import {changeQuote} from '../redux/quote-machine/quote-machine.actions';
 import Button from '@material-ui/core/Button';
 import {changeBackgroundColor} from '../redux/background-page/background-page.actions';
-import {pickRandomProperty} from '../utils/functions';
+import {pickRandomColor, generateRandomNumber} from '../utils/functions';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import {tweetUrl} from '../utils/functions'
 
@@ -25,20 +25,16 @@ const QuoteBox = ({listOfQuotes, changeQuote, changeBackgroundColor, listOfColor
             <div className='author-text'>
                 {
                     quotes.map(quote =>
-                        quote.id === currentQuote ? <p>{quote.author}</p>: <p></p>)
+                        quote.id === currentQuote ? <p><b>{quote.author}</b></p>: <p></p>)
                 }
             </div>
             <Button variant='contained' color='primary' className='change-button'
             onClick={() => {
-                console.log('activo')
-                var num = Math.floor((Math.random() * (16-1))+1);
-                while (num === currentQuote){
-                    num = Math.floor((Math.random() * (16-1))+1);
-                } 
+                var num = generateRandomNumber(currentQuote)
                 changeQuote(num);
                 var shareQuote = quotes.find(quote => quote.id === num);
                 setCompleteQuote(shareQuote);
-                changeBackgroundColor(pickRandomProperty(colors))}}>
+                changeBackgroundColor(pickRandomColor())}}>
                 Cambia!
             </Button>
             <Button variant='contained' color='secondary' className='share-button' href={`${tweetUrl(completeQuote)}`} target="_blank">

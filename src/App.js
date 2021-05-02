@@ -4,10 +4,9 @@ import {connect} from 'react-redux'
 
 
 const App = ({page}) => {
-  const {currentColor, colors} = page;
-  const nextColor = colors[currentColor]
+  const {currentColor} = page;
   return (
-    <div style={nextColor} className='container'>
+    <div style={currentColor} className='container'>
       <QuoteBox />
     </div>
   );
