@@ -1,0 +1,47 @@
+.quote-box {
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width:35vw;
+    height:300px;
+    margin:auto;
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+
+    .quote-text{
+        position:relative;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        word-wrap: break-word;
+        align-items: center;
+        margin-right: 40px;
+        p {
+            text-align: center;
+            color: black;
+            font-family: 'Raleway', sans-serif;
+            font-size: x-large;
+        }
+    }
+
+    .author-text{
+        position: absolute;
+        bottom: 20%;
+        right: 5%;
+
+        p{
+            text-align: center;
+            color: black;
+            font-family: 'Raleway', sans-serif;
+            font-size: medium;
+        }
+    }
+
+    .change-button{
+        position:absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+}
