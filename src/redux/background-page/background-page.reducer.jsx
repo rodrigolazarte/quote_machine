@@ -1,10 +1,8 @@
 import backgroundPageActionTypes from './background-page.types'
+import {pickRandomColor} from '../../utils/functions';
 
 const INITIAL_STATE = {
-    currentColor: {
-        backgroundColor:'blue',
-        transition:'background-color 1s ease-out'
-    }
+    currentColor: pickRandomColor()
 };
 
 const backgroundPageReducer = (state = INITIAL_STATE, action) => {

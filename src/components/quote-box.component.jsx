@@ -8,9 +8,8 @@ import {pickRandomColor, generateRandomNumber} from '../utils/functions';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import {tweetUrl} from '../utils/functions'
 
-const QuoteBox = ({listOfQuotes, changeQuote, changeBackgroundColor, listOfColors}) => {
+const QuoteBox = ({listOfQuotes, changeQuote, changeBackgroundColor}) => {
     const {currentQuote, quotes} = listOfQuotes;
-    const {colors} = listOfColors;
     const [completeQuote, setCompleteQuote] = useState({id:1, text: "No hay que ir para atrás ni para darse impulso", author: "Lao Tsé"});
 
     return(
@@ -38,9 +37,8 @@ const QuoteBox = ({listOfQuotes, changeQuote, changeBackgroundColor, listOfColor
                 Cambia!
             </Button>
             <Button variant='contained' color='secondary' className='share-button' href={`${tweetUrl(completeQuote)}`} target="_blank">
-            <TwitterIcon className='share-icon'></TwitterIcon>
-            </Button>
-            
+                <TwitterIcon />
+            </Button>        
         </div>
     )
 }
