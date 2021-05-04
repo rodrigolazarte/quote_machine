@@ -57,3 +57,11 @@
         border-radius: 50%;
     }
 }
+
+@media screen and (max-width: 1060px){
+    .quote-box {width:35vw;}
+}
+
+@media screen and (max-width: 768px){
+    .quote-box {width:80vw; height: 400px;}
+}
